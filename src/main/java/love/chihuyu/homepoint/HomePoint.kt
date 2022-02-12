@@ -26,6 +26,7 @@ class HomePoint : JavaPlugin() {
         Load.register()
         ListHome.register()
         Home.register()
+        DelHome.register()
 
         logger.info("plugin has loaded.")
     }
