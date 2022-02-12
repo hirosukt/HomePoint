@@ -1,9 +1,6 @@
 package love.chihuyu.homepoint
 
-import love.chihuyu.homepoint.command.commands.ListHome
-import love.chihuyu.homepoint.command.commands.Load
-import love.chihuyu.homepoint.command.commands.Save
-import love.chihuyu.homepoint.command.commands.SetHome
+import love.chihuyu.homepoint.command.commands.*
 import love.chihuyu.homepoint.point.Point
 import org.bukkit.configuration.serialization.ConfigurationSerialization
 import org.bukkit.plugin.java.JavaPlugin
@@ -21,12 +18,14 @@ class HomePoint : JavaPlugin() {
     override fun onEnable() {
         saveResource("config.yml", false)
         ConfigurationSerialization.registerClass(Point::class.java)
+        PointDatas.points = mutableMapOf()
         PointDatas.load()
 
         SetHome.register()
         Save.register()
         Load.register()
         ListHome.register()
+        Home.register()
 
         logger.info("plugin has loaded.")
     }

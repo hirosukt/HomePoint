@@ -26,7 +26,7 @@ object SetHome: Command("sethome") {
         if (player == null) {
             PointDatas.points[sender.uniqueId] = mutableListOf(Point(args[0], sender.location))
         } else {
-            if (player.any { it.pointName == args[0] }) {
+            if (player.any { it.getPointName() == args[0] }) {
                 sender.sendMessage("§cThe name already set.")
                 return
             }

@@ -18,15 +18,10 @@ object ListHome : Command("listhome") {
             return
         }
 
-        val player =
-            PointDatas.points[(sender as Player).uniqueId]?.joinToString("\n") {
-                "§6${it.pointName} §7-> ${
-                    "%,.1f".format(
-                        it.location.x
-                    )
-                }, ${"%,.1f".format(it.location.y)}, ${"%,.1f".format(it.location.z)}"
-            }
-        sender.sendMessage("§7Here are your home list.")
+        PointDatas.load()
+
+        val player = PointDatas.points[(sender as Player).uniqueId]?.joinToString("\n") { "§6${it.getPointName()} §7-> ${"%,.1f".format(it.getLocation().x)}, ${"%,.1f".format(it.getLocation().y)}, ${"%,.1f".format(it.getLocation().z)}" }
+        sender.sendMessage("§7Heres are your home list.")
         sender.sendMessage(player)
     }
 

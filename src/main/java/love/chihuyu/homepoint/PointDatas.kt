@@ -7,18 +7,18 @@ import java.util.UUID
 
 object PointDatas {
 
-    val points: MutableMap<UUID, MutableList<Point>> = mutableMapOf()
+    lateinit var points: MutableMap<UUID, MutableList<Point>>
 
     fun save() {
         points.forEach {
             plugin.config.set(it.key.toString(), it.value)
         }
-        plugin.saveConfig()
     }
 
     fun load() {
         points.clear()
         plugin.config.getKeys(false).forEach {
+            plugin.logger.info("loading $it")
             points[UUID.fromString(it)] = plugin.config.get(it) as MutableList<Point>
         }
     }
