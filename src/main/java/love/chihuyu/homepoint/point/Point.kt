@@ -14,7 +14,7 @@ class Point(): ConfigurationSerializable {
     }
 
     constructor(map: MutableMap<String, Any>) : this() {
-        this.pointName = map["pointName"] as String
+        this.pointName = map["pointName"].toString()
         this.location = map["location"] as Location
     }
 
