@@ -12,8 +12,6 @@ object ListHome : Command("listhome") {
             err = "Please do command in world."
         } else if (!sender.hasPermission("homepoint.command.listhome")) {
             err = "You don't have permission."
-        } else if (args.isEmpty()) {
-            err = "Please input name."
         }
         if (err != null) {
             sender.sendMessage("§c$err")
