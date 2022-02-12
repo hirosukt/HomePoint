@@ -20,8 +20,8 @@ class HomePoint : JavaPlugin() {
 
     override fun onEnable() {
         saveResource("config.yml", false)
-        PointDatas.load()
         ConfigurationSerialization.registerClass(Point::class.java)
+        PointDatas.load()
 
         SetHome.register()
         Save.register()

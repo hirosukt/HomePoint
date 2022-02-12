@@ -13,4 +13,8 @@ class Point(val pointName: String, val location: Location): ConfigurationSeriali
 
         return map
     }
+
+    fun deserialize(pointName: String, location: Location): Point {
+        return Point(pointName, location)
+    }
 }

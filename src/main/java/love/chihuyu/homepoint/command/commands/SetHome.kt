@@ -22,15 +22,17 @@ object SetHome: Command("sethome") {
         }
 
         val player = PointDatas.points[(sender as Player).uniqueId]
+
         if (player == null) {
             PointDatas.points[sender.uniqueId] = mutableListOf(Point(args[0], sender.location))
         } else {
-            if (PointDatas.points[sender.uniqueId]?.any { it.pointName == args[0] } == true) {
+            if (player.any { it.pointName == args[0] }) {
                 sender.sendMessage("§cThe name already set.")
                 return
             }
-            player.add(Point(args[0], sender.location))
+            PointDatas.points[sender.uniqueId]?.add(Point(args[0], sender.location))
         }
+
         PointDatas.save()
         sender.sendMessage("§7Home saved successfully.")
     }
