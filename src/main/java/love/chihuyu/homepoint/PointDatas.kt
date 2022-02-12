@@ -18,7 +18,6 @@ object PointDatas {
     fun load() {
         points.clear()
         plugin.config.getKeys(false).forEach {
-            plugin.logger.info("loading $it")
             points[UUID.fromString(it)] = plugin.config.get(it) as MutableList<Point>
         }
     }
