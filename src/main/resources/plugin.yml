@@ -1,0 +1,47 @@
+name: HomePoint
+version: '${version}'
+main: love.chihuyu.homepoint.HomePoint
+api-version: 1.18
+prefix: HomePoint
+authors: [ Hirosuke ]
+description: Teleport to set home.
+website: chihuyu.love
+commands:
+  sethome:
+    aliases:
+      - sh
+  home:
+    aliases:
+      - h
+  delhome:
+    aliases:
+      - dh
+  listhome:
+    aliases:
+      - lh
+  savehome:
+    description: admin only
+  loadhome:
+    description: admin only
+permissions:
+  homepoint.command.*:
+    default: true
+    children:
+      homepoint.command.sethome: true
+      homepoint.command.home: true
+      homepoint.command.delhome: true
+      homepoint.command.listhome: true
+      homepoint.command.savehome: true
+      homepoint.command.loadhome: true
+  homepoint.command.sethome:
+    default: true
+  homepoint.command.home:
+    default: true
+  homepoint.command.delhome:
+    default: true
+  homepoint.command.listhome:
+    default: true
+  homepoint.command.savehome:
+    default: op
+  homepoint.command.loadhome:
+    default: op
