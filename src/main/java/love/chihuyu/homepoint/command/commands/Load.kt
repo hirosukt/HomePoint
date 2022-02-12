@@ -19,7 +19,7 @@ object Load: Command("loadhome") {
         sender.sendMessage("§7Data was loaded successfully.")
     }
 
-    override fun onTabComplete(sender: CommandSender, label: String, args: Array<out String>): List<String>? {
-        TODO("Not yet implemented")
+    override fun onTabComplete(sender: CommandSender, label: String, args: Array<out String>): List<String> {
+        return emptyList()
     }
 }

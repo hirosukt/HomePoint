@@ -19,7 +19,7 @@ object Save: Command("savehome") {
         sender.sendMessage("§7Data was saved successfully.")
     }
 
-    override fun onTabComplete(sender: CommandSender, label: String, args: Array<out String>): List<String>? {
-        TODO("Not yet implemented")
+    override fun onTabComplete(sender: CommandSender, label: String, args: Array<out String>): List<String> {
+        return emptyList()
     }
 }
