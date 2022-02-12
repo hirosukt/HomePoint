@@ -33,6 +33,7 @@ object SetHome: Command("sethome") {
             PointDatas.points[sender.uniqueId]?.add(Point(args[0], sender.location))
         }
 
+        PointDatas.tempPoints[sender.uniqueId] = sender.location
         PointDatas.save()
         sender.sendMessage("§7Home saved successfully.")
     }

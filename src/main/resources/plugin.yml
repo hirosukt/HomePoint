@@ -23,6 +23,9 @@ commands:
     description: admin only
   loadhome:
     description: admin only
+  backhome:
+    aliases:
+      - bh
 permissions:
   homepoint.command.*:
     default: true

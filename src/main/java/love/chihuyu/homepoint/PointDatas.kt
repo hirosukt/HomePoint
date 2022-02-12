@@ -8,7 +8,7 @@ import java.util.UUID
 object PointDatas {
 
     lateinit var points: MutableMap<UUID, MutableList<Point>>
-    val tempPoints: MutableMap<UUID, Location> = mutableMapOf()
+    lateinit var tempPoints: MutableMap<UUID, Location>
 
     fun save() {
         points.forEach {

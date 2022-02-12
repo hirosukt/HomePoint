@@ -42,7 +42,7 @@ object BackHome: Command("backhome") {
         sender.sendMessage("§7Teleported back to before location.")
     }
 
-    override fun onTabComplete(sender: CommandSender, label: String, args: Array<out String>): List<String>? {
-        TODO("Not yet implemented")
+    override fun onTabComplete(sender: CommandSender, label: String, args: Array<out String>): List<String> {
+        return emptyList()
     }
 }

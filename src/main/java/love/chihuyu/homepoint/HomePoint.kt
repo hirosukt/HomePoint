@@ -19,6 +19,7 @@ class HomePoint : JavaPlugin() {
         saveResource("config.yml", false)
         ConfigurationSerialization.registerClass(Point::class.java)
         PointDatas.points = mutableMapOf()
+        PointDatas.tempPoints = mutableMapOf()
         PointDatas.load()
 
         SetHome.register()
@@ -27,6 +28,7 @@ class HomePoint : JavaPlugin() {
         ListHome.register()
         Home.register()
         DelHome.register()
+        BackHome.register()
 
         logger.info("plugin has loaded.")
     }
