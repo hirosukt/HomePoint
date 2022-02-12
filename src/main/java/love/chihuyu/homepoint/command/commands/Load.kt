@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender
 object Load: Command("loadhome") {
     override fun onCommand(sender: CommandSender, label: String, args: Array<out String>) {
         var err: String? = null
-        if (!sender.hasPermission("homepoint.command.savehome")) {
+        if (!sender.hasPermission("homepoint.command.loadhome")) {
             err = "You don't have permission."
         }
         if (err != null) {
