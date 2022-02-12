@@ -13,6 +13,7 @@ object PointDatas {
         points.forEach {
             plugin.config.set(it.key.toString(), it.value)
         }
+        plugin.saveConfig()
     }
 
     fun load() {
