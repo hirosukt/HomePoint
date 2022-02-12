@@ -1,5 +1,8 @@
 package love.chihuyu.homepoint
 
+import love.chihuyu.homepoint.command.commands.ListHome
+import love.chihuyu.homepoint.command.commands.Load
+import love.chihuyu.homepoint.command.commands.Save
 import love.chihuyu.homepoint.command.commands.SetHome
 import love.chihuyu.homepoint.point.Point
 import org.bukkit.configuration.serialization.ConfigurationSerialization
@@ -21,6 +24,9 @@ class HomePoint : JavaPlugin() {
         ConfigurationSerialization.registerClass(Point::class.java)
 
         SetHome.register()
+        Save.register()
+        Load.register()
+        ListHome.register()
 
         logger.info("plugin has loaded.")
     }
