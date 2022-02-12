@@ -33,6 +33,7 @@ permissions:
       homepoint.command.listhome: true
       homepoint.command.savehome: true
       homepoint.command.loadhome: true
+      homepoint.command.backhome: true
   homepoint.command.sethome:
     default: true
   homepoint.command.home:
@@ -45,3 +46,5 @@ permissions:
     default: op
   homepoint.command.loadhome:
     default: op
+  homepoint.command.backhome:
+    default: true
