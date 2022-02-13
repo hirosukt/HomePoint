@@ -22,13 +22,7 @@ class HomePoint : JavaPlugin() {
         PointDatas.tempPoints = mutableMapOf()
         PointDatas.load()
 
-        SetHome.register()
-        Save.register()
-        Load.register()
-        ListHome.register()
-        Home.register()
-        DelHome.register()
-        BackHome.register()
+        listOf(SetHome, Save, Load, ListHome, Home, DelHome, BackHome).forEach { it.register() }
 
         logger.info("plugin has loaded.")
     }
