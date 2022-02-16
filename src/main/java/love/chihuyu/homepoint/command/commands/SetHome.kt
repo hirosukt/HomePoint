@@ -6,7 +6,7 @@ import love.chihuyu.homepoint.point.Point
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
-object SetHome: Command("sethome") {
+object SetHome : Command("sethome") {
     override fun onCommand(sender: CommandSender, label: String, args: Array<out String>) {
         var err: String? = null
         if (sender !is Player) {

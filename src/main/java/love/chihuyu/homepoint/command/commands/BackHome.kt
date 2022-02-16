@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender
 import org.bukkit.entity.Entity
 import org.bukkit.entity.Player
 
-object BackHome: Command("backhome") {
+object BackHome : Command("backhome") {
     override fun onCommand(sender: CommandSender, label: String, args: Array<out String>) {
         var err: String? = null
         if (sender !is Player) {

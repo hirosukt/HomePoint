@@ -3,7 +3,7 @@ package love.chihuyu.homepoint.point
 import org.bukkit.Location
 import org.bukkit.configuration.serialization.ConfigurationSerializable
 
-class Point(): ConfigurationSerializable {
+class Point() : ConfigurationSerializable {
 
     private lateinit var pointName: String
     private lateinit var location: Location

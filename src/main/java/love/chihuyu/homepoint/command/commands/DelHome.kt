@@ -2,11 +2,10 @@ package love.chihuyu.homepoint.command.commands
 
 import love.chihuyu.homepoint.PointDatas
 import love.chihuyu.homepoint.command.Command
-import love.chihuyu.homepoint.point.Point
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 
-object DelHome: Command("delhome") {
+object DelHome : Command("delhome") {
     override fun onCommand(sender: CommandSender, label: String, args: Array<out String>) {
         var err: String? = null
         if (sender !is Player) {

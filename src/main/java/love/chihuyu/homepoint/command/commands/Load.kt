@@ -4,7 +4,7 @@ import love.chihuyu.homepoint.PointDatas
 import love.chihuyu.homepoint.command.Command
 import org.bukkit.command.CommandSender
 
-object Load: Command("loadhome") {
+object Load : Command("loadhome") {
     override fun onCommand(sender: CommandSender, label: String, args: Array<out String>) {
         var err: String? = null
         if (!sender.hasPermission("homepoint.command.loadhome")) {

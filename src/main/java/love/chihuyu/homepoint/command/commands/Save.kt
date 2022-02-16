@@ -4,7 +4,7 @@ import love.chihuyu.homepoint.PointDatas
 import love.chihuyu.homepoint.command.Command
 import org.bukkit.command.CommandSender
 
-object Save: Command("savehome") {
+object Save : Command("savehome") {
     override fun onCommand(sender: CommandSender, label: String, args: Array<out String>) {
         var err: String? = null
         if (!sender.hasPermission("homepoint.command.savehome")) {

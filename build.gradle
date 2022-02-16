@@ -18,9 +18,41 @@ repositories {
     }
 }
 
+configurations {
+    ktlint
+}
+
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    ktlint 'com.pinterest:ktlint:0.43.2'
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    ignoreExitValue true
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "src/**/*.kt"
+}
+
+jar {
+    from {
+        duplicatesStrategy 'exclude'
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+check.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    ignoreExitValue true
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "-F", "src/**/*.kt"
 }
 
 def targetJavaVersion = 17
@@ -39,15 +71,6 @@ tasks.withType(JavaCompile).configureEach {
     }
 }
 
-jar {
-    from {
-        duplicatesStrategy 'exclude'
-        configurations.runtimeClasspath.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
-}
-
 processResources {
     def props = [version: version]
     inputs.properties props
@@ -57,6 +80,7 @@ processResources {
     }
 }
 compileKotlin {
+    ktlintFormat
     kotlinOptions {
         jvmTarget = "1.8"
     }
