@@ -1,10 +1,10 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.kotlin.jvm' version '1.6.20-M1'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
 }
 
 group = 'love.chihuyu'
-version = '1.0.1'
+version = '1.0.3'
 
 repositories {
     mavenCentral()
@@ -25,7 +25,7 @@ configurations {
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    ktlint 'com.pinterest:ktlint:0.43.2'
+    ktlint 'com.pinterest:ktlint:0.46.1'
 }
 
 task ktlint(type: JavaExec, group: "verification") {
