@@ -1,5 +1,5 @@
 name: HomePoint
-version: '${version}'
+version: '1.0.3'
 main: love.chihuyu.homepoint.HomePoint
 api-version: 1.18
 prefix: HomePoint
