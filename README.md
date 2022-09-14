@@ -24,7 +24,7 @@ load config.
 * `/savehome`
 save internal homes to config.
 
-* `/renamehome <homeName> <after>`
+* `/renamehome[rh] <homeName> <after>`
 rename `homeName` home to `after`.
 
 ## Permissions
