@@ -13,27 +13,29 @@ object CommandBackHome {
         .withAliases("bh")
         .withPermission("homepoint.backhome")
         .withPermission(CommandPermission.NONE)
-        .executesPlayer(PlayerCommandExecutor { sender, args ->
-            val entities = mutableListOf<Entity>()
+        .executesPlayer(
+            PlayerCommandExecutor { sender, args ->
+                val entities = mutableListOf<Entity>()
 
-            entities.add(sender as Player)
+                entities.add(sender as Player)
 
-            if (sender.vehicle != null) {
-                entities.add(sender.vehicle!!)
-                sender.vehicle!!.passengers.forEach { entities.add(it) }
+                if (sender.vehicle != null) {
+                    entities.add(sender.vehicle!!)
+                    sender.vehicle!!.passengers.forEach { entities.add(it) }
+                }
+
+                val location = PointDatas.tempPoints[sender.uniqueId]
+
+                if (location == null) {
+                    sender.sendMessage("§cTemp location not found.")
+                    return@PlayerCommandExecutor
+                }
+
+                entities.forEach { entity ->
+                    entity.teleport(location)
+                }
+
+                sender.sendMessage("§7Teleported back to before location.")
             }
-
-            val location = PointDatas.tempPoints[sender.uniqueId]
-
-            if (location == null) {
-                sender.sendMessage("§cTemp location not found.")
-                return@PlayerCommandExecutor
-            }
-
-            entities.forEach { entity ->
-                entity.teleport(location)
-            }
-
-            sender.sendMessage("§7Teleported back to before location.")
-        })
+        )
 }

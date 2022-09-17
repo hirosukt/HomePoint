@@ -10,8 +10,10 @@ object CommandSaveHome {
     val main = CommandAPICommand("savehome")
         .withPermission("homepoint.savehome")
         .withPermission(CommandPermission.OP)
-        .executes(CommandExecutor { sender, args ->
-            PointDatas.save()
-            sender.sendMessage("§7Data was saved successfully.")
-        })
+        .executes(
+            CommandExecutor { sender, args ->
+                PointDatas.save()
+                sender.sendMessage("§7Data was saved successfully.")
+            }
+        )
 }

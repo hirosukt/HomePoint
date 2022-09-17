@@ -10,8 +10,10 @@ object CommandLoadHome {
     val main = CommandAPICommand("loadhome")
         .withPermission("homepoint.loadhome")
         .withPermission(CommandPermission.OP)
-        .executes(CommandExecutor { sender, args ->
-            PointDatas.load()
-            sender.sendMessage("§7Data was loaded successfully.")
-        })
+        .executes(
+            CommandExecutor { sender, args ->
+                PointDatas.load()
+                sender.sendMessage("§7Data was loaded successfully.")
+            }
+        )
 }

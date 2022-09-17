@@ -15,21 +15,23 @@ object CommandSetHome {
         .withPermission(CommandPermission.NONE)
         .withAliases("sh")
         .withArguments(TextArgument("homeName"))
-        .executesPlayer(PlayerCommandExecutor { sender, args ->
-            val player = PointDatas.points[(sender as Player).uniqueId]
+        .executesPlayer(
+            PlayerCommandExecutor { sender, args ->
+                val player = PointDatas.points[(sender as Player).uniqueId]
 
-            if (player == null) {
-                PointDatas.points[sender.uniqueId] = mutableListOf(Point(args[0] as String, sender.location))
-            } else {
-                if (player.any { it.getPointName() == args[0] as String }) {
-                    sender.sendMessage("§cThe name already set.")
-                    return@PlayerCommandExecutor
+                if (player == null) {
+                    PointDatas.points[sender.uniqueId] = mutableListOf(Point(args[0] as String, sender.location))
+                } else {
+                    if (player.any { it.getPointName() == args[0] as String }) {
+                        sender.sendMessage("§cThe name already set.")
+                        return@PlayerCommandExecutor
+                    }
+                    PointDatas.points[sender.uniqueId]?.add(Point(args[0] as String, sender.location))
                 }
-                PointDatas.points[sender.uniqueId]?.add(Point(args[0] as String, sender.location))
-            }
 
-            PointDatas.tempPoints[sender.uniqueId] = sender.location
-            PointDatas.save()
-            sender.sendMessage("§7Home saved successfully.")
-        })
+                PointDatas.tempPoints[sender.uniqueId] = sender.location
+                PointDatas.save()
+                sender.sendMessage("§7Home saved successfully.")
+            }
+        )
 }
