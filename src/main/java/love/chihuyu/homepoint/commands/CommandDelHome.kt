@@ -2,8 +2,7 @@ package love.chihuyu.homepoint.commands
 
 import dev.jorel.commandapi.CommandAPICommand
 import dev.jorel.commandapi.CommandPermission
-import dev.jorel.commandapi.arguments.ArgumentSuggestions
-import dev.jorel.commandapi.arguments.StringArgument
+import dev.jorel.commandapi.arguments.*
 import dev.jorel.commandapi.executors.PlayerCommandExecutor
 import love.chihuyu.homepoint.PointDatas
 import net.md_5.bungee.api.ChatColor
@@ -22,7 +21,7 @@ object CommandDelHome {
         .withAliases("dh")
         .withPermission("homepoint.delhome")
         .withPermission(CommandPermission.NONE)
-        .withArguments(StringArgument("homeName").replaceSuggestions(ArgumentSuggestions.strings { info ->
+        .withArguments(TextArgument("homeName").replaceSuggestions(ArgumentSuggestions.strings { info ->
             PointDatas.points[(info.sender as Player).uniqueId]?.map { it.getPointName() }?.toTypedArray()
         }))
         .executesPlayer(PlayerCommandExecutor { sender, args ->

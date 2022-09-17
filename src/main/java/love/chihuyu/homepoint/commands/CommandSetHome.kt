@@ -2,7 +2,7 @@ package love.chihuyu.homepoint.commands
 
 import dev.jorel.commandapi.CommandAPICommand
 import dev.jorel.commandapi.CommandPermission
-import dev.jorel.commandapi.arguments.StringArgument
+import dev.jorel.commandapi.arguments.*
 import dev.jorel.commandapi.executors.PlayerCommandExecutor
 import love.chihuyu.homepoint.PointDatas
 import love.chihuyu.homepoint.point.Point
@@ -14,7 +14,7 @@ object CommandSetHome {
         .withPermission("homepoint.sethome")
         .withPermission(CommandPermission.NONE)
         .withAliases("sh")
-        .withArguments(StringArgument("homeName"))
+        .withArguments(TextArgument("homeName"))
         .executesPlayer(PlayerCommandExecutor { sender, args ->
             val player = PointDatas.points[(sender as Player).uniqueId]
 

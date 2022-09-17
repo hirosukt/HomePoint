@@ -3,7 +3,10 @@ package love.chihuyu.homepoint.commands
 import dev.jorel.commandapi.CommandAPICommand
 import dev.jorel.commandapi.CommandPermission
 import dev.jorel.commandapi.arguments.ArgumentSuggestions
+import dev.jorel.commandapi.arguments.ChatArgument
+import dev.jorel.commandapi.arguments.GreedyStringArgument
 import dev.jorel.commandapi.arguments.StringArgument
+import dev.jorel.commandapi.arguments.TextArgument
 import dev.jorel.commandapi.executors.PlayerCommandExecutor
 import love.chihuyu.homepoint.PointDatas
 import love.chihuyu.homepoint.point.Point
@@ -15,7 +18,7 @@ object CommandRenameHome {
         .withPermission("homepoint.renamehome")
         .withPermission(CommandPermission.NONE)
         .withAliases("rh")
-        .withArguments(StringArgument("homeName").replaceSuggestions(ArgumentSuggestions.strings { info ->
+        .withArguments(TextArgument("homeName").replaceSuggestions(ArgumentSuggestions.strings { info ->
             PointDatas.points[(info.sender as Player).uniqueId]?.map { it.getPointName() }?.toTypedArray()
         }), StringArgument("newName"))
         .executesPlayer(PlayerCommandExecutor { sender, args ->

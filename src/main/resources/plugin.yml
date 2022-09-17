@@ -1,5 +1,5 @@
 name: HomePoint
-version: '1.0.0'
+version: '1.0.1'
 main: love.chihuyu.homepoint.HomePoint
 prefix: HomePoint
 authors: [ Hirosuke ]
