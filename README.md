@@ -1,5 +1,5 @@
 # HomePoint
-teleport to my home!
+Teleport to my home!
 
 ## Depends
 [CommandAPI](https://www.spigotmc.org/resources/api-commandapi-1-13-1-19-2.62353/)
