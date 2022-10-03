@@ -6,52 +6,53 @@ Teleport to my home!
 
 ## Commands
 
-* `/home[h] <homeName>`
-teleport to my home. and you can teleport with vehicle(& passengers)
+* `/home[h] {homeName}`  
+teleport to my home. and you can teleport with vehicle(& passengers).  
+If `homeName` is blank, you will teleport to "home".
 
-* `/sethome[sh] <homeName>`
+* `/sethome[sh] <homeName>`  
 set your location to home.
 
-* `/delhome[dh] <homeName>`
+* `/delhome[dh] <homeName>`  
 delete specify home.
 
-* `/forcedelhome <homeName>`
+* `/forcedelhome <homeName>`  
 delete specify home through confirm.
 
-* `/listhome[lh]`
+* `/listhome[lh]`  
 show your homes.
 
-* `/loadhome`
+* `/loadhome`  
 load config.
 
-* `/savehome`
+* `/savehome`  
 save internal homes to config.
 
-* `/renamehome[rh] <homeName> <after>`
+* `/renamehome[rh] <homeName> <after>`  
 rename `homeName` home to `after`.
 
 ## Permissions
 
-* `homepoint.home`
+* `homepoint.home`  
 use /home
 
-* `homepoint.sethome`
+* `homepoint.sethome`  
 use /sethome
 
-* `homepoint.delhome`
+* `homepoint.delhome`  
 use /delhome
 
-* `homepoint.forcedelhome`
+* `homepoint.forcedelhome`  
 use /forcedelhome
 
-* `homepoint.listhome`
+* `homepoint.listhome`  
 use /listhome
 
-* `homepoint.savehome`
+* `homepoint.savehome`  
 use /savehome
 
-* `homepoint.loadhome`
+* `homepoint.loadhome`  
 use /loadhome
 
-* `homepoint.renamehome`
+* `homepoint.renamehome`  
 use /renamehome
